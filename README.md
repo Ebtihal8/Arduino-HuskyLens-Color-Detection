@@ -93,29 +93,6 @@ If no trained object is detected, all LEDs remain OFF.
 
 ---
 
-# 📷 Project Images
-
-## Blue Color Detection
-
-![Blue Detection](blue-detection.png)
-
----
-
-## Color Detection Demonstration
-
-![Color Detection Demo](color-detection-red-green-demo.png)
-
----
-
-# 📄 Source Code
-
-The Arduino source code is included in:
-
-```text
-Color_Detection.ino
-```
-
----
 
 # 🚀 Future Improvements
 
