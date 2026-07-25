@@ -1,35 +1,53 @@
 # 🎨 Arduino HuskyLens Color Detection
 
-A color detection system built using **Arduino Uno**, **HuskyLens**, and an **RGB LED**.  
-The HuskyLens camera detects trained colors and sends the detected color ID to the Arduino through the I2C protocol. According to the detected color, the corresponding RGB LED lights up.
+A real-time color detection system built using **Arduino Uno**, **HuskyLens AI Camera**, and an **RGB LED**.
+
+The HuskyLens camera recognizes trained colors using the **Color Recognition** algorithm and sends the detected color ID to the Arduino via the **I2C protocol**. Based on the detected ID, the Arduino lights the corresponding RGB LED.
 
 ---
 
-## 📌 Project Overview
+## 📖 Table of Contents
 
-This project demonstrates real-time color recognition using the HuskyLens AI camera. Three colors were trained:
+- Project Overview
+- Hardware Components
+- Software Requirements
+- Wiring
+- Project Structure
+- How It Works
+- Code Explanation
+- Project Images
+- Results
+- Future Improvements
+
+---
+
+# 📌 Project Overview
+
+This project demonstrates AI-based color recognition using the HuskyLens camera.
+
+The system was trained to recognize three colors:
 
 - 🔵 Blue
 - 🟢 Green
 - 🔴 Red
 
-When a color is recognized, the RGB LED lights with the matching color.
+When a trained color is detected, the RGB LED lights with the matching color.
 
 ---
 
-## 🛠 Hardware Components
+# 🛠 Hardware Components
 
 - Arduino Uno
 - HuskyLens AI Camera
 - RGB LED (Common Anode)
-- 220Ω Resistors
 - Breadboard
 - Jumper Wires
+- 220Ω Resistors
 - USB Cable
 
 ---
 
-## 📚 Software
+# 💻 Software Requirements
 
 - Arduino IDE
 - HuskyLens Library
@@ -37,7 +55,9 @@ When a color is recognized, the RGB LED lights with the matching color.
 
 ---
 
-## ⚡ Wiring
+# 🔌 Wiring
+
+### HuskyLens → Arduino
 
 | HuskyLens | Arduino |
 |-----------|----------|
@@ -48,41 +68,37 @@ When a color is recognized, the RGB LED lights with the matching color.
 
 ### RGB LED
 
-| LED Pin | Arduino Pin |
-|---------|-------------|
+| LED Color | Arduino Pin |
+|-----------|-------------|
 | Red | D10 |
 | Green | D9 |
 | Blue | D11 |
 
 ---
 
-# 📂 Project Structure
+# 📁 Project Structure
 
-```
+```text
 Arduino-HuskyLens-Color-Detection/
 │
 ├── README.md
 ├── Color_Detection.ino
-│
-└── images/
-    ├── setup.jpg
-    ├── blue-detection.jpg
-    ├── green-detection.jpg
-    ├── red-detection.jpg
-    └── color-detection-red-green-demo.png
+├── blue-detection.png
+└── color-detection-red-green-demo.png
 ```
 
 ---
 
-# 🚀 How It Works
+# ⚙️ How It Works
 
-1. Upload the Arduino code.
-2. Connect HuskyLens through I2C.
-3. Select **Color Recognition** algorithm.
-4. Train Blue, Green, and Red colors.
-5. Present a trained color to the camera.
-6. HuskyLens sends the detected ID.
-7. Arduino turns on the corresponding RGB LED.
+1. Connect HuskyLens to Arduino using the I2C interface.
+2. Upload the Arduino program.
+3. Open the HuskyLens menu.
+4. Select **Color Recognition**.
+5. Train the desired colors.
+6. Present a trained color to the camera.
+7. HuskyLens sends the detected color ID.
+8. Arduino turns on the corresponding RGB LED.
 
 ---
 
@@ -90,83 +106,57 @@ Arduino-HuskyLens-Color-Detection/
 
 The Arduino program performs the following tasks:
 
-- Initializes communication with HuskyLens using I2C.
-- Starts the Color Recognition algorithm.
-- Reads the detected object ID.
-- Controls the RGB LED according to the detected color.
+- Initializes the HuskyLens camera.
+- Starts I2C communication.
+- Selects the **Color Recognition** algorithm.
+- Reads the detected color ID.
+- Controls the RGB LED based on the detected color.
 
-| Color ID | LED |
-|----------|-----|
+### Color IDs
+
+| ID | LED |
+|----|-----|
 | 1 | 🔵 Blue |
 | 2 | 🟢 Green |
 | 3 | 🔴 Red |
 
-If no trained color is detected, all LEDs remain OFF.
+If no trained object is detected, all LEDs remain OFF.
 
 ---
 
 # 📷 Project Images
 
-## Hardware Setup
+## Blue Color Detection
 
-![Hardware Setup](images/setup.jpg)
-
----
-
-## Blue Detection
-
-![Blue Detection](images/blue-detection.jpg)
+![Blue Detection](blue-detection.png)
 
 ---
 
-## Green Detection
+## Color Detection Results
 
-![Green Detection](images/green-detection.jpg)
-
----
-
-## Red Detection
-
-![Red Detection](images/red-detection.jpg)
+![Color Detection Results](color-detection-red-green-demo.png)
 
 ---
 
-## Detection Results
+# ✅ Results
 
-![Detection Results](images/color-detection-red-green-demo.png)
-
----
-
-# 💻 Arduino Code
-
-The complete Arduino source code is available in:
-
-```
-Color_Detection.ino
-```
+- Successfully detected trained colors.
+- Correct RGB LED activated for each detected color.
+- Reliable communication between Arduino and HuskyLens using I2C.
+- Real-time color recognition.
 
 ---
 
-# 🎯 Results
+# 🚀 Future Improvements
 
-✅ Successfully recognized three trained colors.
-
-✅ Activated the matching RGB LED.
-
-✅ Real-time communication between HuskyLens and Arduino.
-
----
-
-# 🔮 Future Improvements
-
-- Detect more colors.
-- Display color names on an OLED screen.
+- Detect additional colors.
+- Display the detected color name on an OLED display.
 - Add a buzzer for audio feedback.
-- Control external devices based on detected colors.
+- Control external devices based on the detected color.
 
 ---
 
-## 👩‍💻 Author
+# 👩‍💻 Author
 
 **Ebtihal**
 
