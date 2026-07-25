@@ -105,7 +105,7 @@ If no trained object is detected, all LEDs remain OFF.
 
 # 👩‍💻 Author
 
-**Ebtihal**
+**Ebtihal Fawaz Alamri**
 
 Computer and Network Engineering Student
 
